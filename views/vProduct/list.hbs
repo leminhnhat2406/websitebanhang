@@ -1,0 +1,48 @@
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h4>Quản Lí Sản Phẩm</h4>
+    </div>
+    {{#if this.empty}}
+    <div class="card-body">
+        <h4 class="card-text">Không có dữ liệu.</h4>
+    </div>
+    {{else}}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col" class="text-center ">Mã</th>
+            <th scope="col">Tên Sản Phẩm</th>
+            <th scope="col">Đớn Giá</th>
+            {{!-- <th scope="col">Description</th> --}}
+            <th scope="col">Mã Loại Sản Phẩm</th>
+            <th scope="col">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each this.products}}
+                <tr>
+                    <th scope="row" class="text-center ">{{ProID}}</th>
+                    <td>{{ProName}}</td>
+                    <td>{{Price}}</td>
+                    <td>{{CatID}}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="/admin/products/edit?id={{idPro}}" role="button" title="Edit Product">
+                            <i class="fa fa-pencil" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn-danger btn-sm" href="javascript:;" role="button">
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            {{/each}}
+            
+        </tbody>
+    </table>
+    {{/if}}
+
+    <div class="card-footer text-muted">
+    Footer
+    </div>
+</div>

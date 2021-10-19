@@ -1,0 +1,17 @@
+<div class="card text-right">
+
+        <div class="list-group list-group-flush bg-dark">
+            {{#each lcCategories}}
+
+            <a href="/products/byCat/{{CatID}}" class="list-group-item list-group-item-action {{#if isActive}}active{{/if}}">
+            {{CatName}}
+            {{#if num_of_products}}
+
+            <span class="badge badge-danger float-left">{{num_of_products}}</span>
+                
+            {{/if}}
+            </a>
+
+            {{/each}}
+        </div>
+</div>
