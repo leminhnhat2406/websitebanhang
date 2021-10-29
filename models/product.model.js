@@ -20,6 +20,15 @@ module.exports = {
         return rows[0].total;
     },
 
+    pageSearchByName: function(name, limit, offset) {
+        return db.load(`SELECT * FROM ${TBL_PRODUCTS} WHERE ProName LIKE '%${name}%' limit ${limit} offset ${offset}`);
+    },
+
+    countByName: async function(name){
+        const rows = await db.load(`SELECT COUNT(*) AS total FROM ${TBL_PRODUCTS} WHERE ProName LIKE '%${name}%'`);
+        return rows[0].total;
+    },
+
     deltail: function(ProID){
         return db.load(`SELECT * FROM ${TBL_PRODUCTS} WHERE ProID = ${ProID}`);
     },

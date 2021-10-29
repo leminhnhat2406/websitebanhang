@@ -37,11 +37,35 @@ Chi Tiết Sản Phẩm
             <a class = "btn btn-success" href="/" role="button" title="Back to list">
                 <i class="fa fa-backward" aria-hidden="true"></i>
             </a>
-
-            <a class="btn btn-sm btn-outline-success" href="javascript:;" role="button">
+            <a class="btn btn-sm btn-outline-success" href="/cart/addtocart?id={{this.products.ProID}}" role="button">
                                 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 Thêm Vào Giỏ Hàng
                             </a>
+                            
         </form>
+        <hr>
+
+        {{#if lcIsAuthenticated}}
+        <hr>
+        <form action="/products/addComment" method="post">
+            <div class="form-group">
+                <label for="txtProductName">Bình luận</label>
+                <input type="text" class="form-control" id="prodId" name= "prodId" readonly hidden
+                value="{{this.products.ProID}}">
+                <input type="text" class="form-control" id="comment" name= "comment" >
+            </div>
+            <button class="btn btn-sm btn-outline-success" type="submit">Submit</button>
+        </form>
+        <hr>
+        {{/if}}
+
+        {{#each this.products.cmts}}
+            <hr>
+            <div class="form-group">
+                    <label for="txtProductName"><b>{{userName}}</b> - <i>{{ts}}</i></label>
+                    <input type="text" value = "{{cmt}}" class="form-control" id="comment" name= "comment" readonly>
+            </div>
+            <hr>
+        {{/each}}
     </div>
 </div>
