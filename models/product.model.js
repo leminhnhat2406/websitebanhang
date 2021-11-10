@@ -32,4 +32,7 @@ module.exports = {
     deltail: function(ProID){
         return db.load(`SELECT * FROM ${TBL_PRODUCTS} WHERE ProID = ${ProID}`);
     },
+    add: function(entity){
+        return db.add(TBL_PRODUCTS, entity);
+    },
 };

@@ -30,8 +30,7 @@ module.exports = {
         return db.patch(TBL_USERS, entity, condition);
     },
 
-    delete: function(id){
-        const condition = {id}
-        return db.delete(TBL_USERS, condition);
+    delete: function(id, username){
+        return db.load(`DELETE FROM ${TBL_USERS} where id = ${id} AND username = ${username}` );
     }
 };

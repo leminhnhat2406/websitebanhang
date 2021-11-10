@@ -1,0 +1,47 @@
+{{#section  'title'}}
+QL Khách Hàng
+{{/section}}
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h4>Quản lí khách hàng</h4>
+    </div>
+    {{#if this.empty}}
+    <div class="card-body">
+        <h4 class="card-text">Không có dữ liệu.</h4>
+    </div>
+    {{else}}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col" class="text-center ">#</th>
+            <th scope="col">Tên tài khoản</th>
+            <th scope="col">Tên khách hàng</th>
+            <th scope="col">Email</th>
+            <th scope="col">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each this.users}}
+                <tr>
+                    <th scope="row" class="text-center ">{{id}}</th>
+                    <td>{{username}}</td>
+                    <td>{{name}}</td>
+                    <td>{{email}}</td>
+                    <td>
+
+                        
+
+
+                    </td>
+                    
+                </tr>
+            {{/each}}
+            
+        </tbody>
+    </table>
+    {{/if}}
+
+    <div class="card-footer text-muted">
+    Footer
+    </div>
+</div>

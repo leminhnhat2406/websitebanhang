@@ -133,9 +133,7 @@ router.get('/details',async function (req, res){
     res.render('vProduct/details',{ products });
 })
 
-router.get('/search',async function (req, res){
-    
-})
+
 
 
 module.exports = router;

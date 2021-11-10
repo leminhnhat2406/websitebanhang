@@ -1,0 +1,48 @@
+{{#section  'title'}}
+QL Bình Luận
+{{/section}}
+<div class="card">
+    <div class="card-header d-flex justify-content-between">
+        <h4>Quản lí bình luận</h4>
+    </div>
+    {{#if this.empty}}
+    <div class="card-body">
+        <h4 class="card-text">Không có dữ liệu.</h4>
+    </div>
+    {{else}}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+            <th scope="col">Mã người dùng</th>
+            <th scope="col">Mã sản phẩm</th>
+            <th scope="col">Bình Luận</th>
+            <th scope="col">Thời gian</th>
+            <th scope="col">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each this.prod_comments}}
+                <tr>
+                    
+                    <td>{{userID}}</td>
+                    <td>{{prodID}}</td>
+                    <td>{{cmt}}</td>
+                    <td>{{ts}}</td>
+                    <td>
+
+                        
+
+
+                    </td>
+                    
+                </tr>
+            {{/each}}
+            
+        </tbody>
+    </table>
+    {{/if}}
+
+    <div class="card-footer text-muted">
+    Footer
+    </div>
+</div>

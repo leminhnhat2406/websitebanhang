@@ -17,18 +17,19 @@ router.get('/add', function (req, res){
     res.render('vProduct/add');
 })
 
-// router.post('/add',async function (req, res){
-//     const entity = {
-//         namePro : req.body.txtProductName,
-//         price : req.body.txtPrice,
-//         description : req.body.txtDescription,
-//         category_id : req.body.txtCategory_id
-//     }
-//     const rs = await productModel.add(entity);
-//     console.log(rs);
-//     res.render('vProduct/add');
-// })
+router.post('/add',async function (req, res){
+    const entity = {
+        ProName: req.body.ProName,
+        TinyDes: req.body.TinyDes,
+        Price: req.body.Price,
+        CatID: req.body.CatID,
+        Quantity: req.body.Quantity
+    }
 
+    await productModel.add(entity);
+
+    res.render('vProduct/add');
+})
 
 module.exports = router;
 

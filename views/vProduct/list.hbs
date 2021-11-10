@@ -1,6 +1,10 @@
 <div class="card">
     <div class="card-header d-flex justify-content-between">
         <h4>Quản Lí Sản Phẩm</h4>
+        <a class = "btn btn-outline-success" href="/admin/products/add" role="button">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+            Thêm Sản Phẩm
+        </a>
     </div>
     {{#if this.empty}}
     <div class="card-body">
@@ -12,7 +16,7 @@
             <tr>
             <th scope="col" class="text-center ">Mã</th>
             <th scope="col">Tên Sản Phẩm</th>
-            <th scope="col">Đớn Giá</th>
+            <th scope="col">Đơn Giá</th>
             {{!-- <th scope="col">Description</th> --}}
             <th scope="col">Mã Loại Sản Phẩm</th>
             <th scope="col">&nbsp;</th>

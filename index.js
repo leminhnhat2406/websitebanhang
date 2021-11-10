@@ -32,6 +32,8 @@ app.get('/admin', (req, res) => {
 
 app.use('/admin/categories', require('./routes/category.route'));
 app.use('/admin/products', require('./routes/product.route'));
+app.use('/admin/users', require('./routes/users.route'));
+app.use('/admin/cmt', require('./routes/cmt.route'));
 
 app.use('/account', require('./routes/account.route'));
 app.use('/products', require('./routes/user_product.route'));
