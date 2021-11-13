@@ -4,8 +4,6 @@ const categoryModel = require('../models/category.model');
 const router = express.Router();
 
 router.get('/',async function (req, res){
-    // throw new Error('xxxxxx')(throw lỗi để kiểm tra)
-
     const list = await categoryModel.all();
     
     res.render('vCategories/list', {
@@ -19,9 +17,6 @@ router.get('/add', function (req, res){
 })
 
 router.post('/add',async function (req, res){
-    // const entity = {
-    //     name: req.body.txtCategoryName
-    // }(đặt biến cho entity nhưng chỉ có 1 nên không có cũng được)
     await categoryModel.add(req.body);
 
     res.render('vCategories/add');
